@@ -9,4 +9,5 @@
 - railsdb
 - Rspec
 - swagger
+- postgesql
 
