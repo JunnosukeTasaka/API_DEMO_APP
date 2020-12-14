@@ -3,7 +3,7 @@
 
 ## 技術スタック
 - ruby（2.5.1）
-- rails
+- rails(5.2.3)
 - GrapeAPI
 - ridgepole
 - railsdb
