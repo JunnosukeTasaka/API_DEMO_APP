@@ -9,6 +9,24 @@ gem 'rails', '~> 5.2.3'
 gem 'pg', '>= 0.18', '< 2.0'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+
+# スキーマ
+gem 'ridgepole'
+
+# Grapeを使うときのGem
+gem 'grape'
+# 1対多のデータ構造を書くときに使う
+gem 'grape-entity'
+# Grapeで定義したAPIをSwagger形式でドキュメント化するために使う
+gem 'grape-swagger'
+# レスポンスモデルをSwaggerで見られる形式にするときに使う
+gem 'grape-swagger-entity'
+
+# Rspec
+gem "rspec-rails"
+# テストデータ作成
+gem "factory_bot_rails"
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
