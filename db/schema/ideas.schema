@@ -1,6 +1,6 @@
 create_table "ideas", force: true do |t|
-  t.references "category_id", null: false
-  t.text "body", null: false
+  t.references "category", null: false
+  t.string "body", null: false
   t.datetime "created_at"
   t.datetime "updated_at"
 end
