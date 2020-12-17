@@ -1,0 +1,50 @@
+Rails:
+  Enabled: true
+
+require:
+  - rubocop-rails
+  - rubocop-rspec
+AllCops:
+  # Rubyのバージョンを指定
+  TargetRubyVersion: 2.4.1
+  # 除外するファイル
+  Exclude:
+    - vendor/bundle/**/*
+    - bin/*
+    - db/**/*
+    - config/**/*
+    - Gemfile
+
+# Missing magic comment # frozen_string_literal: true. を無視
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+# Missing top-level class documentation comment. を無視
+Style/Documentation:
+  Enabled: false
+
+# Line is too long を無視
+Layout/LineLength:
+  Enabled: false
+
+# Use nested module/class definitions instead of compact style. を無視
+Style/ClassAndModuleChildren:
+  Enabled: false
+
+# Use only ascii symbols in comments.
+Style/AsciiComments:
+  Enabled: false
+
+Metrics/BlockLength:
+  Max: 100
+
+RSpec/ContextWording:
+  Enabled: false
+  Exclude:
+    - 'spec/*'
+
+RSpec/ExampleLength:
+  Max: 10
+
+RSpec/MultipleMemoizedHelpers:
+  Max: 10
