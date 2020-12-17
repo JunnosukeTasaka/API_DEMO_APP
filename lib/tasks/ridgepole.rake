@@ -1,20 +1,21 @@
+# frozen_string_literal: true
+
 namespace :ridgepole do
-  desc "Apply ridgepole schemafile"
+  desc 'Apply ridgepole schemafile'
   task apply: :environment do
     ridgepole('--apply')
   end
 
-  desc "Export ridgepole schemafile"
+  desc 'Export ridgepole schemafile'
   task export: :environment do
     ridgepole('--export')
   end
 
   private
+
   def config_file
     if Rails.env.development?
       'config/database.yml'
-    elsif Rails.env.staging?
-      'config/database.staging.yml'
     elsif Rails.env.production?
       'config/database.production.yml'
     else
