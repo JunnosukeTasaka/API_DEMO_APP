@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
@@ -7,8 +9,30 @@ ruby '2.5.7'
 gem 'rails', '~> 5.2.3'
 # Use postgresql as the database for Active Record
 gem 'pg', '>= 0.18', '< 2.0'
+# mysql2
+gem 'mysql2'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
+
+# スキーマ
+gem 'ridgepole'
+
+# Grapeを使うときのGem
+gem 'grape'
+# 1対多のデータ構造を書くときに使う
+gem 'grape-entity'
+# Grapeで定義したAPIをSwagger形式でドキュメント化するために使う
+gem 'grape-swagger'
+# レスポンスモデルをSwaggerで見られる形式にするときに使う
+gem 'grape-swagger-entity'
+
+# Rspec
+gem 'rspec-rails'
+# テストデータ作成
+gem 'factory_bot_rails'
+
+gem 'rubocop-performance'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 # gem 'jbuilder', '~> 2.5'
 # Use Redis adapter to run Action Cable in production
@@ -30,7 +54,17 @@ gem 'bootsnap', '>= 1.1.0', require: false
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  # コードチェック
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-rspec'
+end
+
+group :test do
+  # Call 'byebug' anywhere in the code to stop execution and get a debugger console
+  gem 'byebug', platforms: %i[mri mingw x64_mingw]
+  gem 'database_cleaner'
 end
 
 group :development do
@@ -40,6 +74,5 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
-
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
-gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
