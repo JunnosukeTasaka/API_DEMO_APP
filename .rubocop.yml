@@ -6,7 +6,7 @@ require:
   - rubocop-rspec
 AllCops:
   # Rubyのバージョンを指定
-  TargetRubyVersion: 2.4.1
+  TargetRubyVersion: 2.5.7
   # 除外するファイル
   Exclude:
     - vendor/bundle/**/*
